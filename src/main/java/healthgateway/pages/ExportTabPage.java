@@ -51,7 +51,7 @@
             click(dropDownRecordType);
             click(dropDownValueImmunizations);
             Thread.sleep(500);
-            click(dropDownMinimizeRecordType);
+            //click(dropDownMinimizeRecordType);
         }
 
         public void removeSearchResults() throws InterruptedException {
@@ -61,7 +61,9 @@
 
         public void filterByStartAndEndDate(String textStartDate, String textEndDate) throws InterruptedException {
             typeIn(textSearchStartDate, textStartDate);
+            Thread.sleep(5000);
             typeIn(textSearchEndDate, textEndDate);
+            Thread.sleep(5000);
             click(btnApply);
             Thread.sleep(5000);
         }
