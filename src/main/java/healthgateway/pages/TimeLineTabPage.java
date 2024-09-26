@@ -401,7 +401,7 @@
 
         public void filterBySearch(String text) throws InterruptedException {
             typeIn(textSearch, text);
-            Thread.sleep(500);
+            Thread.sleep(1000);
             click(btnApply);
             Thread.sleep(5000);
         }
@@ -413,9 +413,11 @@
 
         public void filterByStartAndEndDate(String textStartDate, String textEndDate) throws InterruptedException {
             typeIn(textSearchStartDate, textStartDate);
-            typeIn(textSearchEndDate, textEndDate);
-            click(btnApply);
             Thread.sleep(1000);
+            typeIn(textSearchEndDate, textEndDate);
+            Thread.sleep(1000);
+            click(btnApply);
+            Thread.sleep(5000);
         }
 
     }
