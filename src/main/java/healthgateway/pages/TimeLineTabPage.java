@@ -403,12 +403,12 @@
             typeIn(textSearch, text);
             Thread.sleep(500);
             click(btnApply);
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }
 
         public void removeSearchResults() throws InterruptedException {
             click(btnXRemoveSearchResults);
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         }
 
         public void filterByStartAndEndDate(String textStartDate, String textEndDate) throws InterruptedException {
