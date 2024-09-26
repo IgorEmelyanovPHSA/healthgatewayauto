@@ -3,7 +3,6 @@ package healthgateway.tests;
 import Utilities.TestListener;
 import healthgateway.pages.ExportTabPage;
 import healthgateway.pages.MainPageHealthGateway;
-import healthgateway.pages.TimeLineTabPage;
 import healthgateway.pages.Utils;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -11,7 +10,7 @@ import org.testng.annotations.Test;
 
 
 @Listeners({TestListener.class})
-public class ExportFilteringByDateRange extends BaseTest {
+public class Export_Filtering_ByDateRange extends BaseTest {
 
 	//Data for user11
 	private int numberOfRecordsExpectedForDateRange = 7;
@@ -20,7 +19,7 @@ public class ExportFilteringByDateRange extends BaseTest {
 	private String textSearchEndDate = "Jun 1, 2024";
 
 	@Test
-	public void Can_Filtering_Export_data_by_Date_Range() throws Exception {
+	public void Can_do_Filtering_Export_data_by_Date_Range() throws Exception {
 		TestcaseID = "322313"; //Original TC C322313
 		log("Target Environment: " + Utils.getTargetEnvironment());
 		log("Target Browser: " + Utils.getTargetBrowser());
