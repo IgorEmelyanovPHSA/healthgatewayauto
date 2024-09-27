@@ -18,7 +18,7 @@
             <class name="healthgateway.tests.DependentInformationRetrieval"/>
             <class name="healthgateway.tests.DependentOver12YearsOldAccessDenied"/>
             <class name="healthgateway.tests.DependentRemovingAndAddingBack"/>
-            <class name="healthgateway.tests.DependentRegistrationFailWhenDataNotMatching"/>
+            <class name="healthgateway.tests.Dependent_Registration_Fails_When_DataNotMatching"/>
             <class name="healthgateway.tests.DependentDataRecreationUser11"/>
             <class name="healthgateway.tests.CitizenCanLoginToPortalAsUser11"/>
             <class name="healthgateway.tests.Citizen_Timeline_FilterResults_OnCategories_ByDateRange"/>
