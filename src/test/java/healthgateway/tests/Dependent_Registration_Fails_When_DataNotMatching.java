@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 
 @Listeners({TestListener.class})
-public class DependentRegistrationFailWhenDataNotMatching extends BaseTest {
+public class Dependent_Registration_Fails_When_DataNotMatching extends BaseTest {
 
 	private String firstName = "MICHAEL";
 	private String lastName = "TESTERTWO";
@@ -19,7 +19,7 @@ public class DependentRegistrationFailWhenDataNotMatching extends BaseTest {
 
 
 	@Test
-	public void dependentRegistrationFailWhenDataNotMatching() throws Exception {
+	public void Can_Check_Dependents_Registration_Fails_When_DataNotMatching() throws Exception {
 		TestcaseID = "315205"; //Original TC C315205
 		log("Target Environment: " + Utils.getTargetEnvironment());
 		log("Target Browser: " + Utils.getTargetBrowser());
@@ -53,6 +53,7 @@ public class DependentRegistrationFailWhenDataNotMatching extends BaseTest {
 		//Try to add dependent with incorrect phn
 		dependent.addDependent(firstName,lastName,dateOfBirth,"9715491522");
 		Assert.assertTrue(dependent.iSWarningInformationDoesNotMatchDisplayed(), "Warning message was not displayed. Incorrect phn");
+		Thread.sleep(10000);
 		dependent.clickOnBtnCancelDependentRegistration(); //Click btn Cancel to close registration pop-up
 
 		//Try to add dependent with incorrect dateOfBirth
