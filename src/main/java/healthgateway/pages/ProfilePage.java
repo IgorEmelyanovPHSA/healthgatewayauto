@@ -93,9 +93,9 @@
 
         public void phoneNumberCheck(String phoneNumber) throws InterruptedException {
             click(btnEditCellNumber);
-            Thread.sleep(500);
-            typeIn(textEditCellNumberFiled, phoneNumber);
             Thread.sleep(2000);
+            typeIn(textEditCellNumberFiled, phoneNumber);
+            Thread.sleep(5000);
         }
 
         public int checkForNumberValidationErrorMessages(){
