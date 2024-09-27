@@ -59,7 +59,7 @@ public class Dependent_Registration_Fails_When_DataNotMatching extends BaseTest 
 		log("/*6.---Try to add dependent with incorrect phn ---*/");
 		dependent.addDependent(firstName,lastName,dateOfBirth,"9715491522");
 		Assert.assertTrue(dependent.iSWarningInformationDoesNotMatchDisplayed(), "Warning message was not displayed. Incorrect phn");
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		dependent.clickOnBtnCancelDependentRegistration(); //Click btn Cancel to close registration pop-up
 
 		//Try to add dependent with incorrect dateOfBirth
