@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 
 
 @Listeners({TestListener.class})
-public class ProfileCheckPhoneNumber extends BaseTest {
+public class ProfilePage_PhoneNumber_Verification_Error_Management extends BaseTest {
 
 	@Test
-	public void profilePhoneVerificationFromTheList() throws Exception {
+	public void Can_check_Profile_Phone_Valid_InValid_Numbers_Error_Validation_Messages() throws Exception {
 		TestcaseID = "322437"; //Original TC C320343
 		log("Target Environment: " + Utils.getTargetEnvironment());
 		log("Target Browser: " + Utils.getTargetBrowser());
@@ -24,17 +24,21 @@ public class ProfileCheckPhoneNumber extends BaseTest {
 		String[] invalidPhoneNumbersList = { "345-456-7890", "555-456-7890" };
 
 		//Login as user 11 ONLY, data sets are for user 11
+		log("/*1.---Login as user 11 ONLY, data sets are for user 11 ---*/");
 		MainPageHealthGateway mainPageHealthGateway = loginPage.loginIntoHGWithBCServiceCardAsUser11();
 
 		//GoTo Profile
+		log("/*2.---GoTo Profile ---*/");
 		ProfilePage profile = mainPageHealthGateway.goToProfilePage();
 
 		//To test valid phone number
+		log("/*3.---To test valid phone number ---*/");
 		for (int i = 0; i < validPhoneNumbersList.length; i++) {
 			profile.phoneNumberCheck(validPhoneNumbersList[i]);
 			int errorCountCheck = profile.checkForNumberValidationErrorMessages();
 
 			//Validation for valid phone number
+			log("/*4.---Validation for valid phone number ---*/");
 			Assert.assertTrue(errorCountCheck == 0, "Valid phone number validation failed for " + validPhoneNumbersList[i]);
 
 			//Print the status of checked phone number
@@ -42,11 +46,13 @@ public class ProfileCheckPhoneNumber extends BaseTest {
 		}
 
 		//To test invalid phone number
+		log("/*5.---To test invalid phone number ---*/");
 		for (int i = 0; i < invalidPhoneNumbersList.length; i++) {
 			profile.phoneNumberCheck(invalidPhoneNumbersList[i]);
 			int errorCountCheck = profile.checkForNumberValidationErrorMessages();
 
 			//Validation for invalid phone number
+			log("/*6.---Validation for invalid phone number ---*/");
 			Assert.assertTrue(errorCountCheck == 1, "Invalid phone number validation failed for " + invalidPhoneNumbersList[i]);
 
 			//Print the status of checked phone number

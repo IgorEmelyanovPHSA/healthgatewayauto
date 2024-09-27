@@ -26,7 +26,7 @@
             <class name="healthgateway.tests.Export_Filtering_ByDateRange"/>
             <class name="healthgateway.tests.ExportFilteringByRecommendedImmunization"/>
             <class name="healthgateway.tests.ProfileCheckEmail"/>
-            <class name="healthgateway.tests.ProfileCheckPhoneNumber"/>
+            <class name="healthgateway.tests.ProfilePage_PhoneNumber_Verification_Error_Management"/>
              <!--    <class name="healthgateway.tests.RegistrationEmailVerification"/>
                <class name="healthgateway.tests.RegistrationPhoneVerification"/>   -->
               <!-- <class name="healthgateway.tests.CitizenCanCreateAndViewNotes"/> -->
