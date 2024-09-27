@@ -26,14 +26,17 @@ public class Dependent_Registration_Fails_When_DataNotMatching extends BaseTest 
 		log("Test Case " +"C" +TestcaseID);
 
 		//Login as user 11
+		log("/*1.---Login as user 11 ---*/");
 		MainPageHealthGateway mainPageHealthGateway = loginPage.loginIntoHGWithBCServiceCardAsUser11();
 
 		//GoTo Dependents
+		log("/*2.---GoTo Dependents ---*/");
 		DependentsTabPage dependent = mainPageHealthGateway.goToTabDependents();
 
 		log("Total number of dependents " +String.valueOf(dependent.getNumberOfDependents()));
 
 		//Delete dependent if present
+		log("/*3.---Delete dependent if present ---*/");
 		if(dependent.iSDependentPresentByName(firstName +" " +lastName) == true){
 			dependent.deleteDependentByName(firstName + " " + lastName, "remove");
 			Assert.assertFalse(dependent.iSDependentPresentByName(firstName +" " +lastName), "Error. Dependent not removed");
@@ -41,27 +44,32 @@ public class Dependent_Registration_Fails_When_DataNotMatching extends BaseTest 
 		}
 
 		//Try to add dependent with incorrect firstName
+		log("/*4.---Try to add dependent with incorrect firstName ---*/");
 		dependent.addDependent("MICHAEL Test",lastName,dateOfBirth,PHN);
 		Assert.assertTrue(dependent.iSWarningInformationDoesNotMatchDisplayed(), "Warning message was not displayed. Incorrect firstName");
 		dependent.clickOnBtnCancelDependentRegistration(); //Click btn Cancel to close registration pop-up
 
 		//Try to add dependent with incorrect lastName
+		log("/*5.---Try to add dependent with incorrect lastName ---*/");
 		dependent.addDependent(firstName,"TESTERTWO Test",dateOfBirth,PHN);
 		Assert.assertTrue(dependent.iSWarningInformationDoesNotMatchDisplayed(), "Warning message was not displayed. Incorrect lastName");
 		dependent.clickOnBtnCancelDependentRegistration(); //Click btn Cancel to close registration pop-up
 
 		//Try to add dependent with incorrect phn
+		log("/*6.---Try to add dependent with incorrect phn ---*/");
 		dependent.addDependent(firstName,lastName,dateOfBirth,"9715491522");
 		Assert.assertTrue(dependent.iSWarningInformationDoesNotMatchDisplayed(), "Warning message was not displayed. Incorrect phn");
 		Thread.sleep(10000);
 		dependent.clickOnBtnCancelDependentRegistration(); //Click btn Cancel to close registration pop-up
 
 		//Try to add dependent with incorrect dateOfBirth
+		log("/*7.---Try to add dependent with incorrect dateOfBirth ---*/");
 		dependent.addDependent(firstName,lastName,"Dec 01, 2017",PHN);
 		Assert.assertTrue(dependent.iSWarningInformationDoesNotMatchDisplayed(), "Warning message was not displayed. Incorrect dateOfBirth");
 		dependent.clickOnBtnCancelDependentRegistration(); //Click btn Cancel to close registration pop-up
 
 		//Add dependent with correct information and validate the result
+		log("/*8.---Add dependent with correct information and validate the result ---*/");
 		dependent.addDependent(firstName,lastName,dateOfBirth,PHN);
 		Assert.assertTrue(dependent.iSDependentPresentByName(firstName +" " +lastName), "Error. Dependent not added!");
 		log("Dependent is added successfully with correct data");
