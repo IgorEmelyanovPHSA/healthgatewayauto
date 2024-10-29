@@ -28,10 +28,10 @@ public class MainPageHealthGateway extends BasePage {
     @FindBy(xpath = "//div[@data-region-name ='themeHeaderProfileMenu']")
     private WebElement profileIcon;
 
-    @FindBy(xpath = "//span[@title ='Logout']")
+    @FindBy(xpath = "//span[text() ='Logout']")
     private WebElement btnLogOutUnderProfile;
 
-    @FindBy(xpath = "//span[@title ='Profile']")
+    @FindBy(xpath = "(//span[text()='Profile'])[2]")
     private WebElement dropDownProfile;
 
     @FindBy(xpath = "//*[text()='Organ Donor Registration']/../..//span")
